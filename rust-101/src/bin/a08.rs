@@ -9,4 +9,37 @@
 // * Use a function to print out the drink flavor and ounces
 // * Use a match expression to print the drink flavor
 
-fn main() {}
+use std::println;
+
+#[derive(Debug)]
+enum Flavors {
+    Lemon,
+    Martini,
+}
+
+struct Drink {
+    flavor: Flavors,
+    fluid_oz: f64,
+}
+
+fn print_drink(drink: Drink) {
+    match drink.flavor {
+        Flavors::Martini => println!("Flavor: Martini"),
+        Flavors::Lemon => println!("Flavor: Lemon"),
+    }
+    println!("Fluid Oz: {:?}", drink.fluid_oz);
+}
+
+fn main() {
+    let drink = Drink {
+        flavor: Flavors::Lemon,
+        fluid_oz: 2.3,
+    };
+
+    print_drink(drink);
+
+    print_drink(Drink {
+        flavor: Flavors::Martini,
+        fluid_oz: 4.0,
+    });
+}
