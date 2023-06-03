@@ -31,15 +31,15 @@ fn print_drink(drink: Drink) {
 }
 
 fn main() {
-    let drink = Drink {
+    let lemonade = Drink {
         flavor: Flavors::Lemon,
         fluid_oz: 2.3,
     };
+    print_drink(lemonade);
 
-    print_drink(drink);
-
-    print_drink(Drink {
+    let martini = Drink {
         flavor: Flavors::Martini,
-        fluid_oz: 4.0,
-    });
+        fluid_oz: 10.0,
+    };
+    print_drink(martini);
 }

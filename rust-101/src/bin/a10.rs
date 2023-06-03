@@ -14,12 +14,16 @@
 
 use std::println;
 
-fn print_number(num: i32) {
-    let result = if num <= 100 { "<=100" } else { ">100" };
-
-    println!("{:?}", result);
+fn print_message(greater_than_100: bool) {
+    match greater_than_100 {
+        true => println!("its big"),
+        false => println!("its small"),
+    }
 }
 
 fn main() {
-    print_number(20);
+    let num: i32 = 200;
+    let greater_than_100: bool = num > 100;
+
+    print_message(greater_than_100);
 }

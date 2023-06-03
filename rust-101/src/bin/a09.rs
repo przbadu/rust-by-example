@@ -9,18 +9,16 @@
 // * Destructure the return value into two variables
 // * Use an if..else if..else block to determine what to print
 
-fn coordinate() -> (i32, i32) {
-    (1, 7)
+fn coords(x: i32, y: i32) -> (i32, i32) {
+    (x, y)
 }
 
 fn main() {
-    let (_x, y) = coordinate();
+    let (_x, y) = coords(10, 20);
 
-    if y > 5 {
-        println!(">5");
-    } else if y < 5 {
-        println!("<5");
-    } else {
-        println!("=5");
+    match y.cmp(&5) {
+        std::cmp::Ordering::Less => println!("<5"),
+        std::cmp::Ordering::Equal => println!("=5"),
+        std::cmp::Ordering::Greater => println!(">5"),
     }
 }
