@@ -12,4 +12,14 @@
 // * Use a match expression to determine which message
 //   to print
 
-fn main() {}
+use std::println;
+
+fn print_number(num: i32) {
+    let result = if num <= 100 { "<=100" } else { ">100" };
+
+    println!("{:?}", result);
+}
+
+fn main() {
+    print_number(20);
+}
